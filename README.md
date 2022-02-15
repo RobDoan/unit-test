@@ -75,7 +75,7 @@ end
 
 ### The three styles of unit testing
 
-- **Output-based testing**: In output-based testing, tests verify the output the system generates. This style of testing assumes there are no side effects and the only result of the SUT’s work is the value it returns to the caller.
+1. **Output-based testing**: In output-based testing, tests verify the output the system generates. This style of testing assumes there are no side effects and the only result of the SUT’s work is the value it returns to the caller.
 
 ```ruby
   def first_char(str)
@@ -88,7 +88,7 @@ end
   end
 ```
 
-- **State-based testing**: is about verifying the state of the system after an operation is complete
+2. **State-based testing**: is about verifying the state of the system after an operation is complete
 
 Example:
 
@@ -104,7 +104,7 @@ Example:
   end
 ```
 
-- **Communication-based testing**: is communication-based testing. This style uses mocks to verify communications between the system under test and its collaborators
+3. **Communication-based testing**: is communication-based testing. This style uses mocks to verify communications between the system under test and its collaborators
 
 Example:
 
