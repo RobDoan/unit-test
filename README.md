@@ -9,6 +9,7 @@ The trade-off between the first three attributes of a good unit test is similar 
 ### Test Pyramid
 
 ![Test Pyramid](./test-pyramid.jpeg)
+
 The Test Pyramid advocates for a certain ratio of unit, integration, and end-to-end tests.
 
 End-to-end tests favor protection against regressions, while unit tests favor fast feedback
@@ -87,7 +88,7 @@ end
   end
 ```
 
-- State-based testing: is about verifying the state of the system after an operation is complete
+- **State-based testing**: is about verifying the state of the system after an operation is complete
 
 Example:
 
@@ -103,7 +104,7 @@ Example:
   end
 ```
 
-- Communication-based testing: is communication-based testing. This style uses mocks to verify communications between the system under test and its collaborators
+- **Communication-based testing**: is communication-based testing. This style uses mocks to verify communications between the system under test and its collaborators
 
 Example:
 
@@ -122,8 +123,8 @@ Example:
 ### Rules:
 
 - **Choose black-box testing over white-box testing by default.**
-- Resistance to refactoring is non-negotiable because whether a test possess this attribute is mostly a binary choice: the test either has resistance to refactoring or it doesn’t.
-- **stubs** > **mocks**. This does not mean stubs(including `dummy`, `fake`) is better than mocks. Some cases we need to do white-box testing because It's hard to test result:
+- **Resistance to refactoring is non-negotiable** because whether a test possess this attribute is mostly a binary choice: the test either has resistance to refactoring or it doesn’t.
+- **stubs** > **mocks**. This does not mean stubs(including `dummy`, `fake`) is better than mocks. We may consider use `Mock` for following cases:
   - Sending email
   - Call a service (webmock)
   - Execute command lines (ffmpeg command)
@@ -133,4 +134,7 @@ Example:
 - **Observable behavior > implementation details**. The only way to avoid the couple to code's implementation is to verify the end result the code produces (its observable behavior) and distance tests from implementation details as much as possible. In other words, tests must focus on the whats, not the hows
 
 
-### Code encapsulation
+### Notes:
+
+- Code is liability. Test code is liability too.
+- If the test code is not resistant to refactoring, that means every time we change the code, we have to update the test. => test doesn't help us to detect if the changes cause bugs but it requires more cost to maintain
