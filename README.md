@@ -98,13 +98,13 @@ Example:
   end
 
   test "creating product" do
-    assert_diffrent "Product.count" do
+    assert_diffrent "Product.count", +1 do
       create_product({name: "Samsung Galaxy"})
     end
   end
 ```
 
-3. **Communication-based testing**: is communication-based testing. This style uses mocks to verify communications between the system under test and its collaborators
+3. **Communication-based testing**: This style uses mocks to verify communications between the system under test and its collaborators
 
 Example:
 
